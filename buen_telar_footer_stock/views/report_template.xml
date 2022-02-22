@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="buen_telar_footers_invoice_external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@name='financial_infos']" position="after">
+            <div name="report_footer_customer_invoice" t-if="o._name == 'stock.picking' and company.get_models_custom_footer(o)">
+                <span t-field="company.buen_telar_report_footer_picking"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_invoice_external_layout_clean" inherit_id="web.external_layout_clean">
+        <xpath expr="//div[@class='col-1']" position="before">
+            <div name="report_footer_customer_invoice" t-if="o._name == 'stock.picking' and company.get_models_custom_footer(o)" class="col-3">
+                <span t-field="company.buen_telar_report_footer_picking"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_invoice_external_layout_boxed" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[@t-field='company.report_footer']" position="after">
+            <div name="report_footer_customer_invoice" t-if="o._name == 'stock.picking' and company.get_models_custom_footer(o)">
+                <span t-field="company.buen_telar_report_footer_picking"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_invoice_external_layout_background" inherit_id="web.external_layout_background">
+        <xpath expr="//div[@t-field='company.report_footer']" position="after">
+            <div name="report_footer_customer_invoice" t-if="o._name == 'stock.picking' and company.get_models_custom_footer(o)">
+                <span t-field="company.buen_telar_report_footer_picking"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

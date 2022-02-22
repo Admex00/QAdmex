@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="buen_telar_footers_external_layout_standard" inherit_id="web.external_layout_standard">
+        <xpath expr="//ul[@class='list-inline mb4']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+        <xpath expr="//div[@name='financial_infos']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_external_layout_clean" inherit_id="web.external_layout_clean">
+        <xpath expr="//div[@class='col-3']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+        <xpath expr="//div[@class='col-4 text-right']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_external_layout_boxed" inherit_id="web.external_layout_boxed">
+        <xpath expr="//ul[@class='list-inline']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+        <xpath expr="//div[@t-field='company.report_footer']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+    </template>
+
+    <template id="buen_telar_footers_external_layout_background" inherit_id="web.external_layout_background">
+        <xpath expr="//ul[@class='list-inline']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+        <xpath expr="//div[@t-field='company.report_footer']" position="attributes">
+             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>
+        </xpath>
+    </template>
+
+<!--    <template id="buen_telar_footers_internal_layout" inherit_id="web.internal_layout">-->
+<!--        <xpath expr="//ul[@class='list-inline']" position="attributes">-->
+<!--             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//div[@t-field='company.report_footer']" position="attributes">-->
+<!--             <attribute name="t-if">not company.get_models_custom_footer(o)</attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

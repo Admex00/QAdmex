@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_inherit_buentela_picking" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.buen.telar</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="stock.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='signature_delivery_orders']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="buentelar_picking_footer">
+                    <div class="o_setting_left_pane">
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="buen_telar_report_footer_picking"/>
+                        <span title="Custom Footer for Picking printing."
+                              aria-label="Custom Footer for Picking Printing." role="img"/>
+                        <div class="text-muted">
+                            Set a Footer for printing.
+                        </div>
+                        <div class="content-group">
+                            <div class="mt16">
+                                <span class="col-lg-3"><field name="buen_telar_report_footer_picking"/></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
